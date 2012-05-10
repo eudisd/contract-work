@@ -35,9 +35,9 @@ jQuery(document).ready(function($){
         n = Number(n.split("_")[1]);
         
         if ($(this).is(":checked")){
-            $("#trnum_0" + n).css("background-color", "red");
+            $("#divnum_0" + n).css("background-color", "red");
         } else {
-            $("#trnum_0" + n).css("background-color", "");
+            $("#divnum_0" + n).css("background-color", "");
         }
         
     });
@@ -88,7 +88,9 @@ function validate_form($, current_n) {
             wholesale_elem = $("input[name='wholesale_0" + i + "']"),
             retail_elem    = $("input[name='retail_0" + i + "']"),
             stock_elem     = $("input[name='stock_0" + i + "']"),
-            delete_elem    = $("input[name='delete_0" + i + "']");
+            delete_elem    = $("input[name='delete_0" + i + "']"),
+            reorder_elem   = $("input[name='reorder_0" + i + "']"),
+            maxlevel_elem  = $("input[name='maxlevel_0" + i + "']");
             
             if (delete_elem.is(":checked")){
                 continue;
@@ -114,6 +116,24 @@ function validate_form($, current_n) {
                     list_of_errors_divs.push(stock_elem.attr("name"));
                 } else {
                     stock_elem.css("border", "2px inset rgb(0, 0, 0)");
+                }
+                
+                // New Fields to validate reorder and maxlevel
+                
+                if(isNaN(parseInt(reorder_elem.val()))){
+                    list_of_errors_divs.push(stop_elem.attr("name"));
+                } else if (reorder_elem.val() < 0){
+                    list_of_errors_divs.push(reorder_elem.attr("name"));
+                } else {
+                    reorder_elem.css("border", "2px inset rgb(0, 0, 0)");
+                }
+                
+                if(isNaN(parseInt(maxlevel_elem.val()))){
+                    list_of_errors_divs.push(maxlevel_elem.attr("name"));
+                } else if (maxlevel_elem.val() < 0){
+                    list_of_errors_divs.push(maxlevel_elem.attr("name"));
+                } else {
+                    maxlevel_elem.css("border", "2px inset rgb(0, 0, 0)");
                 }
             }
     }

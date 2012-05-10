@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DEMO</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+    <style type="text/css">
+        #main_table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width:960px;border:1px solid #ccc;margin-bottom:20px;">
+
+    <form id="main_form" action="products.cfm" method="post">
+
+    <table id="main_table" class="pad">
+        <tr class="skip">
+            <td><b>Item Name</b></td>
+            <td><b>Wholesale</b></td>
+            <td><b>Retail</b></td>
+            <td align="center" width="100"><b>In Stock</b></td>
+            <td align="center" width="100"><b>Auto Manage</b></td><td align="center" width="100"><b>Stock</b></td>
+            <td><b>Delete</b></td>
+        </tr>
+        <!-- THIS IS A SAMPLE ROW ALREADY IN THE TABLE -->
+        <input type="hidden" name="id_00" value="234">
+        
+        <tr>
+        <td style="padding-right:10px;"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
+        <td><input type="text" name="wholesale_00" value="5.00" size="6"></td>
+        <td><input type="text" name="retail_00" value="10.00" size="6"></td>
+        <td align="center"><input type="checkbox" name="instock_00" value="1" checked="checked"></td>
+        <td align="center"><input type="checkbox" name="manage_00" value="1" checked="checked"></td>
+        <td align="center"><input type="text" name="stock_00" value="6" size="6"></td>
+        <td align="center"><input type="checkbox" name="delete_00" value="1"></td>
+        </tr>
+        
+        <input type="hidden" name="id_01" value="234">
+        
+        <tr>
+        <td style="padding-right:10px;"><input type="text" name="name_01" value="S Small" size="40"></td>
+        <td><input type="text" name="wholesale_01" value="5.00" size="6"></td>
+        <td><input type="text" name="retail_01" value="10.00" size="6"></td>
+        <td align="center"><input type="checkbox" name="instock_01" value="1" checked="checked"></td>
+        <td align="center"><input type="checkbox" name="manage_01" value="1" checked="checked"></td>
+        <td align="center"><input type="text" name="stock_01" value="6" size="6"></td>
+        <td align="center"><input type="checkbox" name="delete_01" value="1"></td>
+        </tr>
+        <!-- ------------------------------------------ -->
+        
+        <!-- THIS IS THE HIDDEN COUNTER  -->
+        <input type="hidden" name="index" id="index" value="2">
+        <!-- --------------------------- -->
+
+        <tr id="buttons" class="skip">
+            <td>
+                <input id="add_btn" type="button" name="add_new_item" value="Add new item">
+            </td>
+            <td colspan="5"><div id="alert" style="color:red;font-weight:bold;display:none;">Please fix the errors in the form before saving</div></td>
+            <td><input id="save_btn" type="submit" name="save" value="Save"></td>
+        </tr>
+    </table>
+
+    </form>
+
+    </div>
+</body>
+
+</html>
+

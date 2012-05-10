@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,64 +12,85 @@
             border-spacing: 0px;
         }
 
+        .row {
+            width: 960px;
+            border: 1px solid #ccc;
+            margin-bottom:10px;
+        }
+        
+        .last_row {
+            width: 960px;
+            border: 0px solid #ccc;
+            margin-bottom: 20px;
+        }
+        
     </style>
 </head>
 <body>
-    <div style="width:960px;border:1px solid #ccc;margin-bottom:20px;">
 
-    <form id="main_form" action="products.cfm" method="post">
 
-    <table id="main_table" class="pad">
-        <tr class="skip">
-            <td><b>Item Name</b></td>
-            <td><b>Wholesale</b></td>
-            <td><b>Retail</b></td>
-            <td align="center" width="100"><b>In Stock</b></td>
-            <td align="center" width="100"><b>Auto Manage</b></td><td align="center" width="100"><b>Stock</b></td>
-            <td><b>Delete</b></td>
-        </tr>
-        <!-- THIS IS A SAMPLE ROW ALREADY IN THE TABLE -->
+<form id="main_form" action="products.cfm" method="post">
+	<div class="row">
         <input type="hidden" name="id_00" value="234">
-        
+    
+    	<table width="100%">
         <tr>
-        <td style="padding-right:10px;"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
-        <td><input type="text" name="wholesale_00" value="5.00" size="6"></td>
-        <td><input type="text" name="retail_00" value="10.00" size="6"></td>
-        <td align="center"><input type="checkbox" name="instock_00" value="1" checked="checked"></td>
-        <td align="center"><input type="checkbox" name="manage_00" value="1" checked="checked"></td>
-        <td align="center"><input type="text" name="stock_00" value="6" size="6"></td>
-        <td align="center"><input type="checkbox" name="delete_00" value="1"></td>
+        	<td>Name:</td>
+            <td style="padding-right:10px;"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
+        	<td>Wholesale:</td>
+            <td><input type="text" name="wholesale_00" value="5.00" size="6"></td>
+        	<td>Stock:</td>
+            <td><input type="text" name="stock_00" value="6" size="6"></td>
         </tr>
-        
-        <input type="hidden" name="id_01" value="234">
-        
         <tr>
-        <td style="padding-right:10px;"><input type="text" name="name_01" value="S Small" size="40"></td>
-        <td><input type="text" name="wholesale_01" value="5.00" size="6"></td>
-        <td><input type="text" name="retail_01" value="10.00" size="6"></td>
-        <td align="center"><input type="checkbox" name="instock_01" value="1" checked="checked"></td>
-        <td align="center"><input type="checkbox" name="manage_01" value="1" checked="checked"></td>
-        <td align="center"><input type="text" name="stock_01" value="6" size="6"></td>
-        <td align="center"><input type="checkbox" name="delete_01" value="1"></td>
+        	<td>Description:</td>
+        	<td style="padding-right:10px;"><input type="text" name="description_00" value="CC SHIRT SMALL" size="40"></td>
+        	<td>Retail:</td>
+                <td><input type="text" name="retail_00" value="10.00" size="6"></td>
+        	<td>Reorder alert:</td>
+        	<td><input type="text" name="reorder_00" value="3" size="6"></td>
+        	</tr>
+        	<tr>
+        	<td>Stock Code:</td>
+        	<td><input type="text" name="stockcode_00" value="BM10-PO-SB-01-K" size="20"></td>
+        	<td colspan="2">&nbsp;</td>
+        	<td>Max level:</td>
+        	<td><input type="text" name="maxlevel_00" value="6" size="6"></td>
+        	</tr>
+        	<tr>
+        	<td>Delete Item:</td>
+        	<td><input type="checkbox" name="delete_00" value="1"></td>
+        	<td>Auto Manage:</td>
+        	<td><input type="checkbox" name="manage_00" value="1" checked="checked"></td>
+        	<td>In Stock:</td>
+        	<td><input type="checkbox" name="instock_00" value="1" checked="checked"></td>
         </tr>
-        <!-- ------------------------------------------ -->
-        
-        <!-- THIS IS THE HIDDEN COUNTER  -->
-        <input type="hidden" name="index" id="index" value="2">
-        <!-- --------------------------- -->
+    	</table>
+	</div>
 
-        <tr id="buttons" class="skip">
-            <td>
-                <input id="add_btn" type="button" name="add_new_item" value="Add new item">
-            </td>
-            <td colspan="5"><div id="alert" style="color:red;font-weight:bold;display:none;">Please fix the errors in the form before saving</div></td>
-            <td><input id="save_btn" type="submit" name="save" value="Save"></td>
-        </tr>
-    </table>
+    
+    <!-- THIS IS THE HIDDEN COUNTER  -->
+    <input type="hidden" name="index" id="index" value="1">
+    <!-- --------------------------- -->
 
-    </form>
+	<div class="last_row">
 
-    </div>
+    	<table id="main_table" class="pad" width="100%">
+        	<tr id="buttons" class="skip">
+            	<td>
+            	    <input id="add_btn" type="button" name="add_new_item" value="Add new item">
+            	</td>
+            	<td width="90%">
+            	    <div id="alert" style="color:red;font-weight:bold;display:none;">Please fix the errors in the form before saving</div>
+            	</td>
+            	<td>
+            	    <input id="save_btn" type="submit" name="save" value="Save">
+            	</td>
+        	</tr>
+        </table>
+	</div>
+</form>
+
 </body>
 
 </html>

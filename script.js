@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     
-    var n = 0; // parseInt($("#index").val());
+    var n = parseInt($("#index").val());
     
     // First, we must fix all the old rows so that they can accept the 
     // validation that is already built in.
@@ -20,8 +20,9 @@ jQuery(document).ready(function($){
         e.preventDefault();
         e.stopPropagation();
         var res = validate_form($, n);
+        console.log(res);
         if ( res === false ) {
-            $("#main_table td input[type='text']").css("border", "2px inset rgb(0, 0, 0)");
+            $("#main_form table td input[type='text']").css("border", "2px inset rgb(0, 0, 0)");
             $("#alert").hide();
             $("#main_form").submit();
         } else {
@@ -82,7 +83,7 @@ function fix_old_rows($, current_n){
 
 function validate_form($, current_n) {
     var list_of_errors_divs = [];
-    
+    console.log("Current N: " + current_n)
     for (var i = 0; i < current_n; i++){
         var name_elem      = $("input[name='name_0" + i + "']"),
             wholesale_elem = $("input[name='wholesale_0" + i + "']"),
@@ -121,7 +122,7 @@ function validate_form($, current_n) {
                 // New Fields to validate reorder and maxlevel
                 
                 if(isNaN(parseInt(reorder_elem.val()))){
-                    list_of_errors_divs.push(stop_elem.attr("name"));
+                    list_of_errors_divs.push(reorder_elem.attr("name"));
                 } else if (reorder_elem.val() < 0){
                     list_of_errors_divs.push(reorder_elem.attr("name"));
                 } else {
@@ -137,7 +138,7 @@ function validate_form($, current_n) {
                 }
             }
     }
-    
+    console.log("ERRORS: " + list_of_errors_divs);
     if (list_of_errors_divs.length === 0){
         return false;
     } else {

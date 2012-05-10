@@ -184,16 +184,19 @@ function append_row($, num) {
         instock_elem   = $("<input type='checkbox' id='instock_0" + num + "' name='instock_0" + num + "' value='1' checked='checked'>"),
         manage_elem    = $("<input type='checkbox' name='manage_0" + num + "' value='' checked='checked'>"),
         stock_elem     = $("<input type='text' id='stock_0" + num + "' name='stock_0" + num + "' value='' size='6'>"),
-        delete_elem    = $("<input class='delete' type='checkbox' id='delete_0" + num + "' name='delete_0" + num + "' value='1'>");
-
+        delete_elem    = $("<input class='delete' type='checkbox' id='delete_0" + num + "' name='delete_0" + num + "' value='1'>"),
+        reorder_elem   = $("<input>"),
+        stockcode_elem = $("<input>"),
+        maxlevel_elem  = $("<input>"),
+        desc_elem      = $("<input>");
         // Prepare the tr's first
         tr[0] = $("<tr class='tr0'></tr>");
         tr0_tds[0] = $("<td>Name</td>");
-        tr0_tds[1] = $("<td class='namestyle'></td>");
+        tr0_tds[1] = $("<td class='namestyle'></td>").append(name_elem);
         tr0_tds[2] = $("<td>Wholesale:</td>");
-        tr0_tds[3] = $("<td></td>");
+        tr0_tds[3] = $("<td></td>").append(wholesale_elem);
         tr0_tds[4] = $("<td>Stock:</td>");
-        tr0_tds[5] = $("<td></td>");
+        tr0_tds[5] = $("<td></td>").append(stock_elem);
         
         for (i = 0; i < tr0_tds.length; i++){
             tr[0].append(tr0_tds[i]);
@@ -201,11 +204,11 @@ function append_row($, num) {
         
         tr[1] = $("<tr class='tr1'></tr>");
         tr1_tds[0] = $("<td>Description:</td>");
-        tr1_tds[1] = $("<td class='namestyle'></td>");
+        tr1_tds[1] = $("<td class='namestyle'></td>").append(desc_elem);
         tr1_tds[2] = $("<td>Retail:</td>");
-        tr1_tds[3] = $("<td></td>");
+        tr1_tds[3] = $("<td></td>").append(retail_elem);
         tr1_tds[4] = $("<td>Reorder alert:</td>");
-        tr1_tds[5] = $("<td></td>");
+        tr1_tds[5] = $("<td></td>").append(reorder_elem);
         
         for (i = 0; i < tr1_tds.length; i++){
             tr[1].append(tr1_tds[i]);
@@ -213,10 +216,10 @@ function append_row($, num) {
         
         tr[2] = $("<tr class='tr2'></tr>");
         tr2_tds[0] = $("<td>Stock Code:</td>");
-        tr2_tds[1] = $("<td></td>");
+        tr2_tds[1] = $("<td></td>").append(stockcode_elem);
         tr2_tds[2] = $("<td colspan='2'>&nbsp;</td>");
         tr2_tds[3] = $("<td>Max level:</td>");
-        tr2_tds[4] = $("<td></td>");
+        tr2_tds[4] = $("<td></td>").append(maxlevel_elem);
         
         for (i = 0; i < tr2_tds.length; i++){
             tr[2].append(tr2_tds[i]);

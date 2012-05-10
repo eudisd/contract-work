@@ -1,10 +1,23 @@
+jQuery.expr[':'].regex = function(elem, index, match) {
+    var matchParams = match[3].split(','),
+        validLabels = /^(data|css):/,
+        attr = {
+            method: matchParams[0].match(validLabels) ? 
+                        matchParams[0].split(':')[0] : 'attr',
+            property: matchParams.shift().replace(validLabels,'')
+        },
+        regexFlags = 'ig',
+        regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+    return regex.test(jQuery(elem)[attr.method](attr.property));
+}
+
 jQuery(document).ready(function($){
     
     var n = parseInt($("#index").val());
     
     // First, we must fix all the old rows so that they can accept the 
     // validation that is already built in.
-    //fix_old_rows($, n);
+    fix_old_rows($, n);
 
     if (isNaN(n)){
         alert("The Value of 'index' is not a number! It must be set correctly for it to work! with prepopulated rows!");
@@ -51,34 +64,30 @@ if(typeof(String.prototype.trim) === "undefined") {
 }
 
 function fix_old_rows($, current_n){
-    // Test to see if it's a tbody first
-    var c = $("#main_table").children();
-    var is_tbody;
-    if (c.length > 0){
-        is_tbody = (c[0].tagName == "TBODY")? true: false;
-    }
+    var i;
     
-    if (is_tbody){
-        c = c.children();
-    } 
-    
-    // Work with list of tds
-    var count = 0;
-    for(var i = 0; i < c.length; i++){
-        if (c[i].tagName == "TR"){
-            if( $(c[i]).attr("class") == "skip") {
-                continue;
-            } else {
-                $(c[i]).attr("name", "trnum_0" + String(count));
-                $(c[i]).attr("id", "trnum_0" + String(count));
-                $(c[i]).children().last().children().attr("class", "delete");
-                $(c[i]).children().last().children().attr("name", "delete_0" + String(count));
-                $(c[i]).children().last().children().attr("id", "delete_0" + String(count));
-                count++;
-            }
+    var all_divs = $("form div"),  // Get all divs
+        count = 0;
+    console.log("All_divs " + all_divs.length);
+    for (i = 0; i < all_divs.length; i++){
+        console.log($(all_divs[i]).attr("id"))
+        if( $(all_divs[i]).attr("id") === undefined ){
+            console.log("HERE");
+            $(all_divs[i]).attr("id", "divnum_0" + String(count));
+            count++;
         }
     }
-
+    
+    count = 0;
+    var all_deletes = $("input:regex(name, delete_0.*)");
+    for (i = 0; i < all_deletes.length; i++){
+        if( $(all_deletes[i]).attr("class") == undefined) {
+            $(all_deletes[i]).attr("class", "delete");
+            $(all_deletes[i]).attr("name", "delete_0" + String(count));
+            $(all_deletes[i]).attr("id", "delete_0" + String(count));
+            count++;
+        }
+    }
 }
 
 function validate_form($, current_n) {

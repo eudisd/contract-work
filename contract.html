@@ -18,10 +18,14 @@
             margin-bottom:10px;
         }
         
-        .last_row {
+        #last_row {
             width: 960px;
             border: 0px solid #ccc;
             margin-bottom: 20px;
+        }
+        
+        .namestyle {
+            padding-right: 10px;
         }
         
     </style>
@@ -35,7 +39,9 @@
     	<table width="100%">
         <tr>
         	<td>Name:</td>
-            <td style="padding-right:10px;"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
+            <td style="padding-right:10px;">
+                <input type="text" name="name_00" value="Tshirt Small" size="40">
+            </td>
         	<td>Wholesale:</td>
             <td><input type="text" name="wholesale_00" value="5.00" size="6"></td>
         	<td>Stock:</td>
@@ -72,7 +78,7 @@
     	<table width="100%">
         <tr>
         	<td>Name:</td>
-            <td style="padding-right:10px;"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
+            <td class="namestyle"><input type="text" name="name_00" value="Tshirt Small" size="40"></td>
         	<td>Wholesale:</td>
             <td><input type="text" name="wholesale_00" value="5.00" size="6"></td>
         	<td>Stock:</td>
@@ -80,7 +86,7 @@
         </tr>
         <tr>
         	<td>Description:</td>
-        	<td style="padding-right:10px;"><input type="text" name="description_00" value="CC SHIRT SMALL" size="40"></td>
+        	<td class="namestyle"><input type="text" name="description_00" value="CC SHIRT SMALL" size="40"></td>
         	<td>Retail:</td>
             <td><input type="text" name="retail_00" value="10.00" size="6"></td>
         	<td>Reorder alert:</td>
@@ -109,8 +115,7 @@
     <input type="hidden" name="index" id="index" value="1">
     <!-- --------------------------- -->
 
-	<div class="last_row">
-
+	<div id="last_row">
     	<table id="main_table" class="pad" width="100%">
         	<tr id="buttons" class="skip">
             	<td>

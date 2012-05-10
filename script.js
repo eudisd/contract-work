@@ -134,6 +134,7 @@ function show_validation_error($, res) {
 }
 
 function append_row($, num) {
+    alert("000");
      // <input type="hidden" name="id_00" value="234">
      //         <table width="100%">
      //    <tr>
@@ -167,56 +168,79 @@ function append_row($, num) {
      //     <td>In Stock:</td>
      //     <td><input type="checkbox" name="instock_00" value="1" checked="checked"></td>
      //    </tr>
-    var main_div = $("<div id='divnum_0" + num + "'></div>"),
+    var i,
+        main_div = $("<div class='row' id='divnum_0" + num + "'></div>"),
         id       = $("<input type='hidden' name='id_0" + num + "' value=''>"),
         table    = $("<table id='tablenum_0" + num + "'></table>"),
         tr       = [],
         tr0_tds  = [],
         tr1_tds  = [],
         tr2_tds  = [],
-        tr3_tds  = [];
-        
-        //         name_elem = $("<td><input type='text' id='name_0" + num + "' name='name_0" + num + "' value='' size='40'></td>"),
-        //         wholesale_elem = $("<td><input type='text' id='wholesale_0" + num + "' name='wholesale_0" + num + "' value='' size='6'></td>"),
-        //         retail_elem    = $("<td><input type='text' id='retail_0" + num +"' name='retail_0" + num +"' value='' size='6'></td>"),
-        //         instock_elem   = $("<td align='center'><input type='checkbox' id='instock_0" + num + "' name='instock_0" + num + "' value='1' checked='checked'></td>"),
-        //         manage_elem    = $("<td align='center'><input type='checkbox' name='manage_0" + num + "' value='' checked='checked'></td>"),
-        //         stock_elem     = $("<td align='center'><input type='text' id='stock_0" + num + "' name='stock_0" + num + "' value='' size='6'></td>"),
-        //         delete_elem    = $("<td align='center'><input class='delete' type='checkbox' id='delete_0" + num + "' name='delete_0" + num + "' value='1'></td>"),
-               
-        //         tr             = $("<tr id='trnum_0" + num + "'></tr>");
+        tr3_tds  = [],
+
+        name_elem = $("<input type='text' id='name_0" + num + "' name='name_0" + num + "' value='' size='40'>"),
+        wholesale_elem = $("<input type='text' id='wholesale_0" + num + "' name='wholesale_0" + num + "' value='' size='6'>"),
+        retail_elem    = $("<input type='text' id='retail_0" + num +"' name='retail_0" + num +"' value='' size='6'>"),
+        instock_elem   = $("<input type='checkbox' id='instock_0" + num + "' name='instock_0" + num + "' value='1' checked='checked'>"),
+        manage_elem    = $("<input type='checkbox' name='manage_0" + num + "' value='' checked='checked'>"),
+        stock_elem     = $("<input type='text' id='stock_0" + num + "' name='stock_0" + num + "' value='' size='6'>"),
+        delete_elem    = $("<input class='delete' type='checkbox' id='delete_0" + num + "' name='delete_0" + num + "' value='1'>");
 
         // Prepare the tr's first
         tr[0] = $("<tr class='tr0'></tr>");
-        tr0_tds[0] = $("<td></td>");
-        tr0_tds[1] = $("<td></td>");
-        tr0_tds[2] = $("<td></td>");
+        tr0_tds[0] = $("<td>Name</td>");
+        tr0_tds[1] = $("<td class='namestyle'></td>");
+        tr0_tds[2] = $("<td>Wholesale:</td>");
         tr0_tds[3] = $("<td></td>");
-        tr0_tds[4] = $("<td></td>");
+        tr0_tds[4] = $("<td>Stock:</td>");
         tr0_tds[5] = $("<td></td>");
         
+        for (i = 0; i < tr0_tds.length; i++){
+            tr[0].append(tr0_tds[i]);
+        }
+        
         tr[1] = $("<tr class='tr1'></tr>");
-        tr1_tds[0] = $("<td></td>");
-        tr1_tds[1] = $("<td></td>");
-        tr1_tds[2] = $("<td></td>");
+        tr1_tds[0] = $("<td>Description:</td>");
+        tr1_tds[1] = $("<td class='namestyle'></td>");
+        tr1_tds[2] = $("<td>Retail:</td>");
         tr1_tds[3] = $("<td></td>");
-        tr1_tds[4] = $("<td></td>");
+        tr1_tds[4] = $("<td>Reorder alert:</td>");
         tr1_tds[5] = $("<td></td>");
         
+        for (i = 0; i < tr1_tds.length; i++){
+            tr[1].append(tr1_tds[i]);
+        }
+        
         tr[2] = $("<tr class='tr2'></tr>");
-        tr2_tds[0] = $("<td></td>");
+        tr2_tds[0] = $("<td>Stock Code:</td>");
         tr2_tds[1] = $("<td></td>");
-        tr2_tds[2] = $("<td></td>");
-        tr2_tds[3] = $("<td></td>");
+        tr2_tds[2] = $("<td colspan='2'>&nbsp;</td>");
+        tr2_tds[3] = $("<td>Max level:</td>");
         tr2_tds[4] = $("<td></td>");
         
+        for (i = 0; i < tr2_tds.length; i++){
+            tr[2].append(tr2_tds[i]);
+        }
+        
         tr[3] = $("<tr class='tr3'></tr>");
-        tr3_tds[0] = $("<td></td>");
+        tr3_tds[0] = $("<td>Delete Item:</td>");
         tr3_tds[1] = $("<td></td>");
-        tr3_tds[2] = $("<td></td>");
+        tr3_tds[2] = $("<td>Auto Manage:</td>");
         tr3_tds[3] = $("<td></td>");
-        tr3_tds[4] = $("<td></td>");
+        tr3_tds[4] = $("<td>In Stock:</td>");
         tr3_tds[5] = $("<td></td>");
+        
+        for (i = 0; i < tr3_tds.length; i++){
+            tr[3].append(tr3_tds[i]);
+        }
+        
+        table.append(tr[0])
+             .append(tr[1])
+             .append(tr[2])
+             .append(tr[3]);
+             
+        main_div.append(id)
+                .append(table);
         
         // tr.append(name_elem);
         // tr.append(wholesale_elem);
@@ -226,6 +250,7 @@ function append_row($, num) {
         // tr.append(stock_elem);
         // tr.append(delete_elem);
         
+        main_div.insertBefore("#last_row");
         // Add the elements to the DOM
         // id.insertBefore("#buttons");
         // tr.insertBefore("#buttons");

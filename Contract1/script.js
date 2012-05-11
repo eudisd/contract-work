@@ -14,7 +14,6 @@ jQuery.expr[':'].regex = function(elem, index, match) {
 jQuery(document).ready(function($){
     
     var n = parseInt($("#index").val());
-    
     // First, we must fix all the old rows so that they can accept the 
     // validation that is already built in.
     fix_old_rows($, n);
@@ -66,7 +65,7 @@ if(typeof(String.prototype.trim) === "undefined") {
 function fix_old_rows($, current_n){
     var i;
     
-    var all_divs = $("form div"),  // Get all divs
+    var all_divs = $("form div.row"),  // Get all divs
         count = 0;
     console.log("All_divs " + all_divs.length);
     for (i = 0; i < all_divs.length; i++){

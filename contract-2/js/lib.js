@@ -20,7 +20,23 @@ if (!org.util){
     org.util = {};
 }
 
+(function(util, $){
+    try {
+        var jq_version = $().jquery;
+    } catch {
+        // jQuery not defined!
+        return "Namespace: util could not use jquery";
+    }
+    
+})(org.util, jQuery);
+
 (function(running, $){
+    try {
+        var jq_version = $().jquery;
+    } catch {
+        // jQuery not defined!
+        return "Namespace: running could not use jquery";
+    }
     
     /**
     *  Wrapper function for the google analytics stuff

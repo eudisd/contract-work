@@ -1,10 +1,23 @@
+/* Copyright Fraser Mills (c) 2012 */
+
+// First, define a global namespace, so as to not clobber 
+// possibly already defined references.  If org exist, 
+// then we leave it alone.
 
 if (!org) {
     var org = {};
 }
 
+// Define a namespace for this specific contract.  Calling
+// it "running" for now.
+
 if (!org.running){
     org.running = {};
+}
+
+// This is for general helpers
+if (!org.util){
+    org.util = {};
 }
 
 (function(running, $){

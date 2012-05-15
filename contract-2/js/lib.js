@@ -49,11 +49,11 @@ if (!org.util){
     var amount       = 0.0,
         radio        = "",
         select       = "",
-        now          = Date();
-        close_date_1 = $("#close_date_1").val(),
-        close_date_2 = $("#close_date_2").val(),
-        close_date_3 = $("#close_date_3").val(),
-        close_date_4 = $("#close_date_4").val();
+        now          = -1;
+        close_date_1 = 1; // $("#close_date_1").val(),
+        close_date_2 = 1; // $("#close_date_2").val(),
+        close_date_3 = 1; // $("#close_date_3").val(),
+        close_date_4 = 1; // $("#close_date_4").val();
 
     /******************************************************************
     *                       Public Methods                            *

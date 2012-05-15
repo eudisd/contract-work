@@ -12,6 +12,7 @@ $(document).ready(function($){
         // before passing it in...
         
         org.running.logic(radio_1, select_1);
+        org.running.update_view($, $("#mytotal"));
     })
     
     

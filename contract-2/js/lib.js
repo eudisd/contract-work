@@ -95,19 +95,83 @@ if (!org.util){
                 if (   select === "Relay Men" 
                     || select === "Relay Women" 
                     || select === "Relay Mixed"){
-                    amount = 99
+                    amount = 99;
                 } else {
-                    amount = 99
+                    amount = 99;
                 }
             }
         } else if (now < close_date_3) {
-            
+            if (radio === "Short Course") {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 110;
+                } else { 
+                    amount = 70;
+                }
+            } else {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 130;
+                } else {
+                    amount = 130;
+                }
+            }
         } else if (now < close_date_2) {
-
+            if (radio === "Short Course") {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 120;
+                } else { 
+                    amount = 80;
+                }
+            } else {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 150;
+                } else {
+                    amount = 150;
+                }
+            }
         } else if (now < close_date_1) {
-
+            if (radio === "Short Course") {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 130;
+                } else { 
+                    amount = 90;
+                }
+            } else {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 180;
+                } else {
+                    amount = 180;
+                }
+            }
         } else {
-            
+            if (radio === "Short Course") {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 140;
+                } else { 
+                    amount = 100;
+                }
+            } else {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 210;
+                } else {
+                    amount = 210;
+                }
+            }
         }
         
         amount = 1.0;
@@ -118,7 +182,8 @@ if (!org.util){
         console.log("Closedate4" + close_date_4);
     }
     
-    running.update_view = function(){
+    running.update_view = function($, $elem){
         // Update code goes here
+        alert("Updating: " + $elem.html());
     }
 })(org.running, jQuery);

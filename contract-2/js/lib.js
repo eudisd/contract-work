@@ -71,8 +71,33 @@ if (!org.util){
             })();
     }
     
-    running.logic = function(){
+    running.logic = function(val){
         
+        if(true) {
+            if (val === "Short Course") {
+                if(true){
+                
+                } else {
+                
+                }
+            } else {
+                if(false){
+                
+                } else {
+                
+                }
+            }
+        } else if (false) {
+            
+        } else if (false) {
+
+        } else if (false) {
+
+        } else {
+            
+        }
+        
+        alert(val);
         amount = 1.0;
         console.log("Amount: " + amount);
         console.log("Closedate1" + close_date_1);

@@ -6,7 +6,8 @@ $(document).ready(function($){
     
     // Check radio_1 change
     $(".radio_1").live('change', function(){
-        org.running.logic();
+        console.log("CURRENT_VALUE: "  + $(this).val())
+        org.running.logic($(this).val());
     })
     
     

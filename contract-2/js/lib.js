@@ -36,6 +36,7 @@ if (!org.util){
     * Some exception handling here, just incase we call this namespace without
     * jquery.
     **/
+    
     try {
         var jq_version = $().jquery;
     } catch (e) {
@@ -45,13 +46,15 @@ if (!org.util){
     
     /* Private variables go here */
     
-    var amount = 0.0,
-        close_date_1 = Date(),
-        close_date_2 = Date(),
-        close_date_3 = Date(),
-        close_date_4 = Date();
+    var amount       = 0.0,
+        radio        = "",
+        select       = "",
+        now          = Date();
+        close_date_1 = $("#close_date_1").val(),
+        close_date_2 = $("#close_date_2").val(),
+        close_date_3 = $("#close_date_3").val(),
+        close_date_4 = $("#close_date_4").val();
 
-    
     /******************************************************************
     *                       Public Methods                            *
     *******************************************************************/
@@ -71,38 +74,51 @@ if (!org.util){
             })();
     }
     
-    running.logic = function(val){
+    running.logic = function(radio, select){
         
-        if(true) {
-            if (val === "Short Course") {
-                if(true){
-                
-                } else {
-                
+        radio    = radio;
+        select   = select;
+        
+        alert(radio);
+        alert(select);
+        
+        if(now < close_date_4) {
+            if (radio === "Short Course") {
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 99;
+                } else { 
+                    amount = 70;
                 }
             } else {
-                if(false){
-                
+                if (   select === "Relay Men" 
+                    || select === "Relay Women" 
+                    || select === "Relay Mixed"){
+                    amount = 99
                 } else {
-                
+                    amount = 99
                 }
             }
-        } else if (false) {
+        } else if (now < close_date_3) {
             
-        } else if (false) {
+        } else if (now < close_date_2) {
 
-        } else if (false) {
+        } else if (now < close_date_1) {
 
         } else {
             
         }
         
-        alert(val);
         amount = 1.0;
         console.log("Amount: " + amount);
         console.log("Closedate1" + close_date_1);
         console.log("Closedate2" + close_date_2);
         console.log("Closedate3" + close_date_3);
         console.log("Closedate4" + close_date_4);
+    }
+    
+    running.update_view = function(){
+        // Update code goes here
     }
 })(org.running, jQuery);

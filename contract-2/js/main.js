@@ -1,13 +1,17 @@
-// First, call the google analytics.  Does not require 
-// A dom ready handler.
-org.running.google_analytics();
+
 
 $(document).ready(function($){
     
-    // Check radio_1 change
+    org.running.google_analytics();
+    
     $(".radio_1").live('change', function(){
-        console.log("CURRENT_VALUE: "  + $(this).val())
-        org.running.logic($(this).val());
+        var radio_1  = $(this).val(),
+            select_1 = $(".select option:selected").val();
+        
+        // Possibly do some checks on radio_1 and select_1
+        // before passing it in...
+        
+        org.running.logic(radio_1, select_1);
     })
     
     

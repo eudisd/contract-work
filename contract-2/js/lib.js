@@ -79,8 +79,8 @@ if (!org.util){
         radio    = radio;
         select   = select;
         
-        alert("Radio: " + radio);
-        alert("Select: "  + select);
+        // alert("Radio: " + radio);
+        // alert("Select: "  + select);
         
         if(now < close_date_4) {
             if (radio === "Short Course") {
@@ -174,7 +174,6 @@ if (!org.util){
             }
         }
         
-        amount = 1.0;
         console.log("Amount: " + amount);
         console.log("Closedate1" + close_date_1);
         console.log("Closedate2" + close_date_2);
@@ -184,6 +183,6 @@ if (!org.util){
     
     running.update_view = function($, $elem){
         // Update code goes here
-        alert("Updating: " + $elem.html());
+        $elem.html(amount);
     }
 })(org.running, jQuery);

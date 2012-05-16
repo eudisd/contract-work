@@ -28,6 +28,10 @@ if (!org.util){
         return "Namespace: util could not use jquery";
     }
     
+    util.get_date = function(date_string){
+        
+    }
+    
 })(org.util, jQuery);
 
 (function(running, $){
@@ -49,11 +53,17 @@ if (!org.util){
     var amount       = 0.0,
         radio        = "",
         select       = "",
-        now          = -1;
-        close_date_1 = 1; // $("#close_date_1").val(),
-        close_date_2 = 1; // $("#close_date_2").val(),
-        close_date_3 = 1; // $("#close_date_3").val(),
-        close_date_4 = 1; // $("#close_date_4").val();
+        now          = new Date();
+        
+        //"yyyy-MM-dd-HH-mm-ss"
+        d1 = org.util.get_date($("#close_date_1").val());
+        d2 = org.util.get_date($("#close_date_2").val());
+        d3 = org.util.get_date($("#close_date_3").val());
+        d4 = org.util.get_date($("#close_date_4").val());
+        close_date_1 = new Date(d1),
+        close_date_2 = new Date(d2),
+        close_date_3 = new Date(d3),
+        close_date_4 = new Date(d4);
 
     /******************************************************************
     *                       Public Methods                            *
@@ -83,6 +93,7 @@ if (!org.util){
         // alert("Select: "  + select);
         
         if(now < close_date_4) {
+            alert("Date 4 works")
             if (radio === "Short Course") {
                 if (   select === "Relay Men" 
                     || select === "Relay Women" 

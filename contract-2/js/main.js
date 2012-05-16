@@ -26,9 +26,9 @@ $(document).ready(function($){
         
         org.running.logic(radio_1, select_1);
         org.running.update_view($, $("#mytotal"));
-    })
+    });
     
-    
+
 });
 
 

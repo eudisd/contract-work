@@ -79,8 +79,8 @@ if (!org.util){
         radio    = radio;
         select   = select;
         
-        alert(radio);
-        alert(select);
+        alert("Radio: " + radio);
+        alert("Select: "  + select);
         
         if(now < close_date_4) {
             if (radio === "Short Course") {

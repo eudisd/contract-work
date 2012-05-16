@@ -4,6 +4,11 @@ $(document).ready(function($){
     
     org.running.google_analytics();
     
+    org.running.close_date_1 = org.util.get_date($("#close_date_1").val());
+    org.running.close_date_2 = org.util.get_date($("#close_date_2").val());
+    org.running.close_date_3 = org.util.get_date($("#close_date_3").val());
+    org.running.close_date_4 = org.util.get_date($("#close_date_4").val());
+    
     // Update if the select drop-down is changed
     $(".select").live('change', function(){
         var select_1 = $(this).find("option:selected").val(),

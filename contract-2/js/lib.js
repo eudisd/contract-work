@@ -29,7 +29,31 @@ if (!org.util){
     }
     
     util.get_date = function(date_string){
+        //"yyyy-MM-dd-HH-mm-ss"
+        // Valid dates are: 
         
+        // a) M/D/YYYY format
+        // b) M-D-YYYY format
+        // c) M.D.YYYY format
+        // d) M_D_YYYY format
+        
+        if (date_string === "" || date_string === undefined){
+            return false;
+        }
+        var split  = date_string.split("-"),
+            year   = split[0],
+            month  = split[1],
+            day    = split[2],
+            hour   = split[3],
+            minute = split[4],
+            second = split[5],
+            date   = new Date(month + "/" + day + "/" + year);
+            
+            date.setHours(hour);
+            date.setMinutes(minute);
+            date.setSeconds(second);
+            
+        return date;
     }
     
 })(org.util, jQuery);
@@ -50,20 +74,15 @@ if (!org.util){
     
     /* Private variables go here */
     
-    var amount       = 0.0,
-        radio        = "",
-        select       = "",
-        now          = new Date();
-        
-        //"yyyy-MM-dd-HH-mm-ss"
-        d1 = org.util.get_date($("#close_date_1").val());
-        d2 = org.util.get_date($("#close_date_2").val());
-        d3 = org.util.get_date($("#close_date_3").val());
-        d4 = org.util.get_date($("#close_date_4").val());
-        close_date_1 = new Date(d1),
-        close_date_2 = new Date(d2),
-        close_date_3 = new Date(d3),
-        close_date_4 = new Date(d4);
+    running.amount       = 0.0,
+    running.radio        = "",
+    running.select       = "",
+    running.now          = new Date(),
+    running.close_date_1,
+    running.close_date_2,
+    running.close_date_3,
+    running.close_date_4;
+
 
     /******************************************************************
     *                       Public Methods                            *
@@ -86,114 +105,115 @@ if (!org.util){
     
     running.logic = function(radio, select){
         
-        radio    = radio;
-        select   = select;
+        running.radio    = radio;
+        running.select   = select;
+        console.log("Amount: " + running.amount);
         
+        console.log(running.close_date_1);
+        console.log(running.close_date_2);
+        console.log(running.close_date_3);
+        console.log(running.close_date_4);
         // alert("Radio: " + radio);
         // alert("Select: "  + select);
         
-        if(now < close_date_4) {
+        if(running.now < running.close_date_4) {
             alert("Date 4 works")
-            if (radio === "Short Course") {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 99;
+            if (running.radio === "Short Course") {
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 99;
                 } else { 
-                    amount = 70;
+                    running.amount = 70;
                 }
             } else {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 99;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 99;
                 } else {
-                    amount = 99;
+                    running.amount = 99;
                 }
             }
-        } else if (now < close_date_3) {
+        } else if (running.now < running.close_date_3) {
             if (radio === "Short Course") {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 110;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 110;
                 } else { 
-                    amount = 70;
+                    running.amount = 70;
                 }
             } else {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 130;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 130;
                 } else {
-                    amount = 130;
+                    running.amount = 130;
                 }
             }
-        } else if (now < close_date_2) {
-            if (radio === "Short Course") {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 120;
+        } else if (running.now < running.close_date_2) {
+            if (running.radio === "Short Course") {
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 120;
                 } else { 
-                    amount = 80;
+                    running.amount = 80;
                 }
             } else {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 150;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 150;
                 } else {
-                    amount = 150;
+                    running.amount = 150;
                 }
             }
-        } else if (now < close_date_1) {
-            if (radio === "Short Course") {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 130;
+        } else if (running.now < running.close_date_1) {
+            if (running.radio === "Short Course") {
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 130;
                 } else { 
-                    amount = 90;
+                    running.amount = 90;
                 }
             } else {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 180;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 180;
                 } else {
-                    amount = 180;
+                    running.amount = 180;
                 }
             }
         } else {
-            if (radio === "Short Course") {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 140;
+            if (running.radio === "Short Course") {
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 140;
                 } else { 
-                    amount = 100;
+                    running.amount = 100;
                 }
             } else {
-                if (   select === "Relay Men" 
-                    || select === "Relay Women" 
-                    || select === "Relay Mixed"){
-                    amount = 210;
+                if (   running.select === "Relay Men" 
+                    || running.select === "Relay Women" 
+                    || running.select === "Relay Mixed"){
+                    running.amount = 210;
                 } else {
-                    amount = 210;
+                    running.amount = 210;
                 }
             }
         }
         
-        console.log("Amount: " + amount);
-        console.log("Closedate1" + close_date_1);
-        console.log("Closedate2" + close_date_2);
-        console.log("Closedate3" + close_date_3);
-        console.log("Closedate4" + close_date_4);
+
     }
     
     running.update_view = function($, $elem){
         // Update code goes here
-        $elem.html(amount);
+        $elem.html(running.amount);
     }
 })(org.running, jQuery);

@@ -33,6 +33,18 @@ $(document).ready(function($){
         org.running.update_view($, $("#mytotal"));
     });
     
+    
+    var origin_y = parseInt($("#runningtotal").css("top"), 10);
+
+    $(window).bind('scroll', function(){
+        var scroll_y = parseInt($(this).scrollTop(), 10);
+        
+        $("#runningtotal").css("top", String((origin_y - scroll_y)) + "px");
+        if((origin_y - scroll_y) < 0){
+            $("#runningtotal").css("top", "0px");
+        }
+    });
+    
 
 });
 

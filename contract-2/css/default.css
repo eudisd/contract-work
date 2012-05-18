@@ -1,11 +1,10 @@
 
 #runningtotal {
     position: fixed;
-    top: 65%;
-    right: 35%;
+    top: 390px;
+    right: 350px;
     width: 148px;
     height: 100px;
-    
     float: right;
     background-color: rgb(215,215,215);
     text-align: center;

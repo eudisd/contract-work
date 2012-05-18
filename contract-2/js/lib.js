@@ -30,7 +30,7 @@ if (!org.util){
     
     util.get_date = function(date_string){
         //"yyyy-MM-dd-HH-mm-ss"
-        // Valid dates are: 
+        // Valid date formats are: 
         
         // a) M/D/YYYY format
         // b) M-D-YYYY format
@@ -40,6 +40,7 @@ if (!org.util){
         if (date_string === "" || date_string === undefined){
             return false;
         }
+        
         var split  = date_string.split("-"),
             year   = split[0],
             month  = split[1],
@@ -47,6 +48,7 @@ if (!org.util){
             hour   = split[3],
             minute = split[4],
             second = split[5],
+            
             date   = new Date(month + "/" + day + "/" + year);
             
             date.setHours(hour);
@@ -83,7 +85,6 @@ if (!org.util){
     running.close_date_3,
     running.close_date_4;
 
-
     /******************************************************************
     *                       Public Methods                            *
     *******************************************************************/
@@ -107,17 +108,13 @@ if (!org.util){
         
         running.radio    = radio;
         running.select   = select;
-        console.log("Amount: " + running.amount);
         
-        console.log(running.close_date_1);
-        console.log(running.close_date_2);
-        console.log(running.close_date_3);
-        console.log(running.close_date_4);
-        // alert("Radio: " + radio);
-        // alert("Select: "  + select);
+        // console.log(running.close_date_1);
+        // console.log(running.close_date_2);
+        // console.log(running.close_date_3);
+        // console.log(running.close_date_4);
         
         if(running.now < running.close_date_4) {
-            alert("Date 4 works")
             if (running.radio === "Short Course") {
                 if (   running.select === "Relay Men" 
                     || running.select === "Relay Women" 

@@ -9,11 +9,27 @@
     <link rel="shortcut icon" href="favicon.ico">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     
-    <!-- Load the custom library first -->
-   <script type="text/javascript" src="js/lib.js"></script>
+    <!-- load google analytics first -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-15028919-8']);
+        _gaq.push(['_trackPageview']);
 
-   <!-- Load the DOM ready jquery function here -->
-   <script type="text/javascript" src="js/main.js"></script>
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+    </script>
+    
+    <!-- Load the utilities library first -->
+    <script type="text/javascript" src="js/util.js"></script>
+    
+    <!-- Load the custom library -->
+    <script type="text/javascript" src="js/running_total_lib.js"></script>
+
+    <!-- Main JS entry point is here -->
+    <script type="text/javascript" src="js/running_total_main.js"></script>
 
     </head>
     <body>

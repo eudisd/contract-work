@@ -2,8 +2,6 @@
 
 $(document).ready(function($){
     
-    org.running.google_analytics();
-    
     org.running.close_date_1 = org.util.get_date($("#close_date_1").val());
     org.running.close_date_2 = org.util.get_date($("#close_date_2").val());
     org.running.close_date_3 = org.util.get_date($("#close_date_3").val());
@@ -32,7 +30,6 @@ $(document).ready(function($){
         org.running.logic(radio_1, select_1);
         org.running.update_view($, $("#mytotal"));
     });
-    
     
     var origin_y = parseInt($("#runningtotal").css("top"), 10);
 

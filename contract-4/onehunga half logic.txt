@@ -1,0 +1,42 @@
+<!--- Onehunga Half 2012 --->
+
+<cfset closedate2=CreateDateTime(2012, 6, 1, 1, 0, 0)>
+<cfset closedate1=CreateDateTime(2012, 8, 1, 1, 0, 0)>
+
+<cfif mynow lt closedate2>
+
+<cfif select1_1 eq "Half Marathon Run" OR select1_1 eq "Half Marathon Walk">
+  <cfset amount=40>
+<cfelseif select1_1 eq "16Km Run" OR select1_1 eq "16Km Walk">
+  <cfset amount=25>
+<cfelseif select1_1 eq "10Km Run" OR select1_1 eq "10Km Walk">
+  <cfset amount=25>
+<cfelseif select1_1 eq "5Km Run" OR select1_1 eq "5Km Walk">
+  <cfset amount=15>
+</cfif>
+
+<cfelseif mynow lt closedate1>
+
+<cfif select1_1 eq "Half Marathon Run" OR select1_1 eq "Half Marathon Walk">
+  <cfset amount=50>
+<cfelseif select1_1 eq "16Km Run" OR select1_1 eq "16Km Walk">
+  <cfset amount=35>
+<cfelseif select1_1 eq "10Km Run" OR select1_1 eq "10Km Walk">
+  <cfset amount=35>
+<cfelseif select1_1 eq "5Km Run" OR select1_1 eq "5Km Walk">
+  <cfset amount=25>
+</cfif>
+
+<cfelse>
+
+<cfif select1_1 eq "Half Marathon Run" OR select1_1 eq "Half Marathon Walk">
+  <cfset amount=60>
+<cfelseif select1_1 eq "16Km Run" OR select1_1 eq "16Km Walk">
+  <cfset amount=45>
+<cfelseif select1_1 eq "10Km Run" OR select1_1 eq "10Km Walk">
+  <cfset amount=45>
+<cfelseif select1_1 eq "5Km Run" OR select1_1 eq "5Km Walk">
+  <cfset amount=35>
+</cfif>
+
+</cfif>

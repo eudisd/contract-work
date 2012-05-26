@@ -32,8 +32,8 @@ if (!org.running){
     /* Private variables go here */
     
     running.amount       = 0.0,
-    running.radio        = "",
-    running.select       = "",
+    running.select_1     = "",
+    running.select_2     = "",
     running.now          = new Date(),
     running.close_date_1,
     running.close_date_2;
@@ -42,45 +42,46 @@ if (!org.running){
     *                       Public Methods                            *
     *******************************************************************/
     
-    running.logic = function(radio, select){
+    running.logic = function(select_1, select_2){
         
-        running.radio    = radio;
-        running.select   = select;
+        running.select_1 = select_1;
+        running.select_2 = select_2;
         
-        console.log(running.close_date_1);
-        console.log(running.close_date_2);
+        // console.log(running.close_date_1);
+        // console.log(running.close_date_2);
 
         if (running.now < running.close_date_2){
-            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+            if (running.select_1 === "Half Marathon Run" || running.select_1 === "Half Marathon Walk") {
                 running.amount = 40;
-            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+            } else if (running.select_1 === "16Km Run" || running.select_1 === "16Km Walk") {
                 running.amount = 25;
-            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+            } else if (running.select_1 === "10Km Run" || running.select_1 === "10Km Walk") {
                 running.amount = 25;
-            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+            } else if (running.select_1 === "5Km Run" || running.select_1 === "5Km Walk") {
                 running.amount = 15;
             }
         } else if (running.now < running.close_date_1) {
-            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+            if (running.select_1 === "Half Marathon Run" || running.select_1 === "Half Marathon Walk") {
                 running.amount = 50;
-            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+            } else if (running.select_1 === "16Km Run" || running.select_1 === "16Km Walk") {
                 running.amount = 35;
-            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+            } else if (running.select_1 === "10Km Run" || running.select_1 === "10Km Walk") {
                 running.amount = 35;
-            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+            } else if (running.select_1 === "5Km Run" || running.select_1 === "5Km Walk") {
                 running.amount = 25;
             }
         } else {
-            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+            if (running.select_1 === "Half Marathon Run" || running.select_1 === "Half Marathon Walk") {
                 running.amount = 60;
-            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+            } else if (running.select_1 === "16Km Run" || running.select_1 === "16Km Walk") {
                 running.amount = 45;
-            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+            } else if (running.select_1 === "10Km Run" || running.select_1 === "10Km Walk") {
                 running.amount = 45;
-            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+            } else if (running.select_1 === "5Km Run" || running.select_1 === "5Km Walk") {
                 running.amount = 35;
             }
         }
+        // console.log("Wtf is the running total?: " + running.amount);
     }
     
     running.update_view = function($, $elem){

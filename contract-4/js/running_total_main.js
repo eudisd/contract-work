@@ -10,9 +10,6 @@ $(document).ready(function($){
         var select_1 = $(this).find("option:selected").val(),
             select_2 = $("select[name='select1_2']").find("option:selected").val();
         
-        // Possibly do some checks on radio_1 and select_1
-        // before passing it in...
-        
         org.running.logic(select_1, select_2);
         org.running.update_view($, $("#mytotal"));
     });
@@ -21,9 +18,6 @@ $(document).ready(function($){
     $("select[name='select1_2']").live('change', function(){
         var select_1 = $("select[name='select1_2']").find("option:selected").val(),
             select_2 = $(this).find("option:selected").val();
-        
-        // Possibly do some checks on radio_1 and select_1
-        // before passing it in...
         
         org.running.logic(select_1, select_2);
         org.running.update_view($, $("#mytotal"));

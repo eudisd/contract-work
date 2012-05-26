@@ -36,9 +36,7 @@ if (!org.running){
     running.select       = "",
     running.now          = new Date(),
     running.close_date_1,
-    running.close_date_2,
-    running.close_date_3,
-    running.close_date_4;
+    running.close_date_2;
 
     /******************************************************************
     *                       Public Methods                            *
@@ -49,104 +47,40 @@ if (!org.running){
         running.radio    = radio;
         running.select   = select;
         
-        // console.log(running.close_date_1);
-        // console.log(running.close_date_2);
-        // console.log(running.close_date_3);
-        // console.log(running.close_date_4);
-        
-        if(running.now < running.close_date_4) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 99;
-                } else { 
-                    running.amount = 70;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 99;
-                } else {
-                    running.amount = 99;
-                }
-            }
-        } else if (running.now < running.close_date_3) {
-            if (radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 110;
-                } else { 
-                    running.amount = 70;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 130;
-                } else {
-                    running.amount = 130;
-                }
-            }
-        } else if (running.now < running.close_date_2) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 120;
-                } else { 
-                    running.amount = 80;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 150;
-                } else {
-                    running.amount = 150;
-                }
+        console.log(running.close_date_1);
+        console.log(running.close_date_2);
+
+        if (running.now < running.close_date_2){
+            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+                running.amount = 40;
+            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+                running.amount = 25;
+            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+                running.amount = 25;
+            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+                running.amount = 15;
             }
         } else if (running.now < running.close_date_1) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 130;
-                } else { 
-                    running.amount = 90;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 180;
-                } else {
-                    running.amount = 180;
-                }
+            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+                running.amount = 50;
+            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+                running.amount = 35;
+            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+                running.amount = 35;
+            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+                running.amount = 25;
             }
         } else {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 140;
-                } else { 
-                    running.amount = 100;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 210;
-                } else {
-                    running.amount = 210;
-                }
+            if (running.select === "Half Marathon Run" || running.select === "Half Marathon Walk") {
+                running.amount = 60;
+            } else if (running.select === "16Km Run" || running.select === "16Km Walk") {
+                running.amount = 45;
+            } else if (running.select === "10Km Run" || running.select === "10Km Walk") {
+                running.amount = 45;
+            } else if (running.select === "5Km Run" || running.select === "5Km Walk") {
+                running.amount = 35;
             }
         }
-        
-
     }
     
     running.update_view = function($, $elem){

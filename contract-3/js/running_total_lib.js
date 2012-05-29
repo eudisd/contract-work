@@ -60,7 +60,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 120;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (running.radio === "Relay Team 3 People") {
                 running.amount = 170;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -69,10 +69,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 198;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 297;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (running.radio === "Traverse Team 4 People") {
                 running.amount = 396;
             } 
         } else if (running.now < running.close_date_4) {
@@ -85,7 +85,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 200;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (running.radio === "Relay Team 3 People") {
                 running.amount = 270;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -94,10 +94,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 240;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 360;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (running.radio === "Traverse Team 4 People") {
                 running.amount = 480;
             }
         } else if (running.now < running.close_date_3) {
@@ -110,7 +110,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 230;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (unning.radio === "Relay Team 3 People") {
                 running.amount = 300;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -119,10 +119,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 320;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 480;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (running.radio === "Traverse Team 4 People") {
                 running.amount = 640;
             }
         } else if (running.now < running.close_date_2) {
@@ -135,7 +135,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 260;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (running.radio === "Relay Team 3 People") {
                 running.amount = 320;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -144,10 +144,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 360;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 540;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (running.radio === "Traverse Team 4 People") {
                 running.amount = 720;
             }
         } else if (running.now < running.close_date_1) {
@@ -160,7 +160,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 290;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (running.radio === "Relay Team 3 People") {
                 running.amount = 350;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -169,10 +169,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 420;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 630;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (running.radio === "Traverse Team 4 People") {
                 running.amount = 840;
             }
         } else {
@@ -185,7 +185,7 @@ if (!org.running){
             } else if (running.radio === "Relay Team 2 People") {
                 running.amount = 320;
                 
-            } else if r(unning.radio === "Relay Team 3 People") {
+            } else if (running.radio === "Relay Team 3 People") {
                 running.amount = 380;
                 
             } else if (running.radio === "Relay Team 4 People") {
@@ -194,10 +194,10 @@ if (!org.running){
             } else if (running.radio === "Traverse Team 2 People") {
                 running.amount = 480;
                 
-            } else if running.radio === "Traverse Team 3 People") {
+            } else if (running.radio === "Traverse Team 3 People") {
                 running.amount = 720;
                 
-            } else if running.radio === "Traverse Team 4 People") {
+            } else if (zrunning.radio === "Traverse Team 4 People") {
                 running.amount = 960;
             }
         }

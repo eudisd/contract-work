@@ -1,0 +1,81 @@
+/* CSS Document */
+body{ background-image:url(../images/background-repeat.jpg); margin-left:0px; margin-top:0px; margin-right:0px; background-color:#34373c;}
+.main_page{width:950px;}
+.clear{clear:both}
+#header{background-image:url(../images/Banner-section.png); width:950px; height:278px;}
+hr{border:3px solid #FFFFFF; margin:0px;}
+#menu{ margin-top:15px;}
+#menu ul{margin:0px; padding:0px;}
+#menu li{float:left; list-style:none; margin-left:10px; margin-right:10px; line-height:38px; font-family:Arial; font-size:16px; color:#FFFFFF; font-weight:bold}
+#menu li a{ color:#FFFFFF; text-decoration:none}
+#menu li a:hover{ color:#FFFFFF; text-decoration:underline}
+h1 {font-family:Arial; font-size:30px; font-weight:bold; color:#FFFFFF; text-align:left}
+#middle .one {width:880px; text-align:left; margin-left:35px; margin-right:35px; margin-top:30px; font-family:Arial; font-size:12px; color:#DFDFDF; line-height:17px;}
+#middle .one_600 {width:600px; text-align:left; margin-left:35px; margin-right:315px; margin-top:30px; font-family:Arial; font-size:12px; color:#DFDFDF; line-height:17px;}
+#middle .left {width:430px; float:left; text-align:left; margin-left:35px; margin-top:30px; font-family:Arial; font-size:12px; color:#DFDFDF; line-height:17px;}
+#middle .left a {color:#ffffff; font-weight:bold;}
+#middle .right a {color:#ffffff; font-weight:bold;}
+#middle .one a {color:#ffffff; font-weight:bold;}
+#middle .one_600 a {color:#ffffff; font-weight:bold;}
+.margn_top{margin-top:15px;}
+.text{font-family:Arial; font-size:12px; color:#DFDFDF; line-height:17px;}
+#middle .right{width:430px; float:left; margin-left:35px; margin-top:30px; font-family:Arial; font-size:12px; color:#DFDFDF; line-height:17px; text-align:left;}
+#footer{padding:10px;vertical-align:middle;}
+#footer .margn_left{margin-left:22px;}
+
+.sub {font-size:85%;color:#fff;}
+.entryform {
+	font-size:small;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	color:#444;
+	}
+
+input.text {
+	border-top:1px solid #7c7c7c;
+	border-left:1px solid #c3c3c3;
+	border-right:1px solid #c3c3c3;
+	border-bottom:1px solid #ddd;
+	background:#fff url(fieldbg.gif) repeat-x top;
+	font-family:"Lucida Grande", Tahoma, Arial, sans-serif;
+	font-size:100%;
+	color:#333;
+	margin:0 4px 0 0;
+	padding:2px 0;
+	}
+	
+input.select {
+	font-family:"Lucida Grande", Tahoma, Arial, sans-serif;
+	font-size:100%;
+	color:#333;
+	margin:0 4px 0 0;
+	padding:2px 0;
+	}
+	
+span.label {
+	font-family:"Lucida Grande", Tahoma, Arial, sans-serif;
+	font-size:small;
+	color:#fff;
+	margin:0 4px 0 0;
+	padding:2px 0;
+	font-weight:bold;
+	}
+	
+input.submit {
+	font-family:"Lucida Grande", Tahoma, Arial, sans-serif;
+	font-weight:bold;
+	font-size:100%;
+	color:#333;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:5px;
+	}
+	
+span.required {
+	font-family:"Lucida Grande", Tahoma, Arial, sans-serif;
+	font-size:small;
+	color:#FF0000;
+	margin:0 4px 0 0;
+	padding:2px 0;
+	font-weight:bold;
+	}
+

@@ -6,6 +6,32 @@
 <title>Entry Coromandel Classic</title> 
 <link rel="stylesheet" href="css/style.css" /> 
 <link rel="shortcut icon" href="favicon.ico"> 
+
+<style type='text/css'>
+#runningtotal {
+    position: fixed;
+    top: 460px;
+    right: 5%;
+    width: 148px;
+    height: 100px;
+    float: right;
+    text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+</style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<!-- Load the utilities library first -->
+<script type="text/javascript" src="js/util.js"></script>
+
+<!-- Load the custom library -->
+<script type="text/javascript" src="js/running_total_lib.js"></script>
+
+<!-- Main JS entry point is here -->
+<script type="text/javascript" src="js/running_total_main.js"></script>
+
 </head> 
 <body>
 <div align="center">
@@ -43,11 +69,15 @@
 
 	
 <h1>Coromandel Classic 2012</h1><br /><br />
-<div style="float:right;">
-<img src="http://www.coromandelclassic.co.nz/images/visamastercard.jpg"><br />
-<span class="sub">Pay by Visa or Mastercard</span>
+
+<div id="runningtotal">
+    <img src="http://www.coromandelclassic.co.nz/images/visamastercard.jpg"><br />
+    <span class="sub">Pay by Visa or Mastercard</span><br />
+    <b>Total: $<span id="mytotal">0</span></b>
 </div>
+
 <b>Individual or team leader details</b><br /><br />
+
 	
 
 

@@ -38,7 +38,8 @@ if (!org.running){
     running.close_date_1,
     running.close_date_2,
     running.close_date_3,
-    running.close_date_4;
+    running.close_date_4,
+    running.close_date_5;
 
     /******************************************************************
     *                       Public Methods                            *
@@ -48,104 +49,158 @@ if (!org.running){
         
         running.radio    = radio;
         running.select   = select;
-        
-        // console.log(running.close_date_1);
-        // console.log(running.close_date_2);
-        // console.log(running.close_date_3);
-        // console.log(running.close_date_4);
-        
-        if(running.now < running.close_date_4) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 99;
-                } else { 
-                    running.amount = 70;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 99;
-                } else {
-                    running.amount = 99;
-                }
+    
+        if (running.now < running.close_date_5) {
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 99;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 120;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 170;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 199;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 198;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 297;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 396;
+            } 
+        } else if (running.now < running.close_date_4) {
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 140;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 200;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 270;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 320;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 240;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 360;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 480;
             }
         } else if (running.now < running.close_date_3) {
-            if (radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 110;
-                } else { 
-                    running.amount = 70;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 130;
-                } else {
-                    running.amount = 130;
-                }
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 170;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 230;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 300;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 350;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 320;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 480;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 640;
             }
         } else if (running.now < running.close_date_2) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 120;
-                } else { 
-                    running.amount = 80;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 150;
-                } else {
-                    running.amount = 150;
-                }
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 290;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 260;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 320;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 380;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 360;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 540;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 720;
             }
         } else if (running.now < running.close_date_1) {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 130;
-                } else { 
-                    running.amount = 90;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 180;
-                } else {
-                    running.amount = 180;
-                }
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 210;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 290;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 350;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 420;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 420;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 630;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 840;
             }
         } else {
-            if (running.radio === "Short Course") {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 140;
-                } else { 
-                    running.amount = 100;
-                }
-            } else {
-                if (   running.select === "Relay Men" 
-                    || running.select === "Relay Women" 
-                    || running.select === "Relay Mixed"){
-                    running.amount = 210;
-                } else {
-                    running.amount = 210;
-                }
+            if (running.radio === "Individual Men Open" 
+                || running.radio === "Individual Women Open"
+                || running.radio === "Individual Men Veteran" 
+                || running.radio === "Individual Women Veteran") {
+                running.amount = 250;
+                
+            } else if (running.radio === "Relay Team 2 People") {
+                running.amount = 320;
+                
+            } else if r(unning.radio === "Relay Team 3 People") {
+                running.amount = 380;
+                
+            } else if (running.radio === "Relay Team 4 People") {
+                running.amount = 480;
+                
+            } else if (running.radio === "Traverse Team 2 People") {
+                running.amount = 480;
+                
+            } else if running.radio === "Traverse Team 3 People") {
+                running.amount = 720;
+                
+            } else if running.radio === "Traverse Team 4 People") {
+                running.amount = 960;
             }
         }
-        
 
     }
     

@@ -20,7 +20,7 @@ $(document).ready(function($){
     });
     
     // Update if the radio button is changed
-    $(".radio_1").live('change', function(){
+    $("input[name='radio_1']").live('change', function(){
         var radio_1  = $(this).val(),
             select_1 = $(".select option:selected").val();
         

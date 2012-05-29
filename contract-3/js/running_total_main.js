@@ -6,6 +6,7 @@ $(document).ready(function($){
     org.running.close_date_2 = org.util.get_date($("#close_date_2").val());
     org.running.close_date_3 = org.util.get_date($("#close_date_3").val());
     org.running.close_date_4 = org.util.get_date($("#close_date_4").val());
+    org.running.close_date_5 = org.util.get_date($("#close_date_5").val());
     
     // Update if the select drop-down is changed
     $(".select").live('change', function(){

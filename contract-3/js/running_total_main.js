@@ -15,19 +15,17 @@ $(document).ready(function($){
         
         // Possibly do some checks on radio_1 and select_1
         // before passing it in...
-        
         org.running.logic(radio_1, select_1);
         org.running.update_view($, $("#mytotal"));
     });
     
     // If the select dropdown changes
     $(".select").live('change', function(){
-        var select_1  = $(this).val(),
-            radio_1 = $("input[name='radio_1']").val();
+        var select_1  = $(this).find("option:selected").val(),
+            radio_1 = $("input[name='radio_1']:checked").val();
         
         // Possibly do some checks on radio_1 and select_1
         // before passing it in...
-        
         org.running.logic(radio_1, select_1);
         org.running.update_view($, $("#mytotal"));
     });

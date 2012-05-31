@@ -201,6 +201,8 @@ if (!org.running){
                 running.amount = 960;
             }
         }
+        
+        running.amount = parseInt(running.amount) + 25 * parseInt(running.select, 10);
 
     }
     

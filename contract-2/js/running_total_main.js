@@ -14,16 +14,17 @@ $(document).ready(function($){
         
         // Possibly do some checks on radio_1 and select_1
         // before passing it in...
-        
-        org.running.logic(radio_1, select_1);
-        org.running.update_view($, $("#mytotal"));
+        if( $("input[name='radio_1']").is(":checked") ){
+            org.running.logic(radio_1, select_1);
+            org.running.update_view($, $("#mytotal"));
+        }
     });
     
     // Update if the radio button is changed
     $("input[name='radio_1']").live('change', function(){
         var radio_1  = $(this).val(),
             select_1 = $(".select option:selected").val();
-        
+    
         // Possibly do some checks on radio_1 and select_1
         // before passing it in...
         

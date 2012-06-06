@@ -8,17 +8,32 @@
 <link rel="shortcut icon" href="favicon.ico"> 
 
 <style type="text/css">
+
+#form_info {
+    width: 100%;
+    vertical-align: top;
+    position: relative;
+    border-collapse: collapse;
+    border: 2px solid white;
+}
+
+#form_info tr td{
+    width: 50%;
+    position: relative;
+    border: 2px solid red;
+}
+
 #runningtotal {
-    position: fixed;
-    top: 460px;
-    right: 5%;
+    position: absolute;
     width: 148px;
     height: 100px;
-    float: right;
+    top:0;
+    right:0;
     text-align: center;
     border-radius: 5px;
     -moz-border-radius: 5px;
 }
+
 </style>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -71,14 +86,10 @@
 
 <form action="http://coromandelclassic.co.nz/entryform.cfm" method="post">
 
-	
+<table id="form_info">
+<tr>
+<td>
 <h1>Coromandel Classic 2012</h1><br /><br />
-
-<div id="runningtotal">
-    <img src="http://www.coromandelclassic.co.nz/images/visamastercard.jpg"><br />
-    <span class="sub">Pay by Visa or Mastercard</span><br />
-    <b>Total: $<span id="mytotal">0</span></b>
-</div>
 
 <b>Individual or team leader details</b><br /><br />
 
@@ -313,12 +324,25 @@
 
 
 	
+
+</td>
+<td>
+    <div id="runningtotal">
+        <img src="http://www.coromandelclassic.co.nz/images/visamastercard.jpg"><br />
+        <span class="sub">Pay by Visa or Mastercard</span><br />
+        <b>Total: $<span id="mytotal">0</span></b>
+    </div>
+</td>
+</tr>
+
+
+</table>
+
 <span class="sub">
 <b>WAIVER</b> In consideration of the acceptance of entry, I / we herby release and discharge the organizers, all sponsors, volunteer groups or individuals from all claims for injury and / or loss I / we may suffer. I / we agree to comply by the rules of the event and by all traffic laws and I / we compete entirely at my / our own risk. I / we also give permission for my / our photo(s) to be used in further and future event promotions with no recompense.</span><br /><br />
 	
 
 <input type="submit" value="Continue to Payment" name="form_1" class="submit">
-
 
 </form>
 

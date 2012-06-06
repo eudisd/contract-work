@@ -51,7 +51,6 @@ if (!org.running){
         running.select   = select;
     
         if (running.now < running.close_date_5) {
-            console.log("radio: "  + running.radio);
             if (running.radio === "Individual Men Open" 
                 || running.radio === "Individual Women Open"
                 || running.radio === "Individual Men Veteran" 

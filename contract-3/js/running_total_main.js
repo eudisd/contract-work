@@ -37,9 +37,10 @@ $(document).ready(function($){
         var form_y   = parseInt($("#form_info").offset().top);
 
         //$("#runningtotal").css("top", String((origin_y - scroll_y)) + "px");
-        var diff = scroll_y - form_y
+        var diff = scroll_y - form_y;
+        
         if(diff >= 0){
-            $("#runningtotal").css("top", diff + "px");
+            $("#runningtotal").css("top", diff  + "px");
         }
         
     });

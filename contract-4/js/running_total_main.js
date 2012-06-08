@@ -34,11 +34,14 @@ $(document).ready(function($){
 
     $(window).bind('scroll', function(){
         var scroll_y = parseInt($(this).scrollTop(), 10);
+        var form_y   = parseInt($("#form_info").offset().top);
+
+        var diff = scroll_y - form_y;
         
-        $("#runningtotal").css("top", String((origin_y - scroll_y)) + "px");
-        if((origin_y - scroll_y) < 0){
-            $("#runningtotal").css("top", "0px");
+        if(diff >= 0){
+            $("#runningtotal").css("top", diff  + "px");
         }
+        
     });
     
 

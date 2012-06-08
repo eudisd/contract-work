@@ -1,13 +1,24 @@
+#form_info {
+    width: 100%;
+    vertical-align: top;
+    position: relative;
+    border-collapse: collapse;
+}
+
+#form_info tr td{
+    width: 50%;
+    position: relative;
+}
 
 #runningtotal {
-    position: fixed;
-    top: 390px;
-    right: 36%;
+    position: absolute;
     width: 148px;
     height: 100px;
-    float: right;
-    background-color: rgb(215,215,215);
+    top:0;
+    right:0;
     text-align: center;
     border-radius: 5px;
     -moz-border-radius: 5px;
+    background-color: rgb(215,215,215);
 }
+

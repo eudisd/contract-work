@@ -8,6 +8,12 @@ $(document).ready(function($){
     org.running.close_date_4 = org.util.get_date($("#close_date_4").val());
     org.running.close_date_5 = org.util.get_date($("#close_date_5").val());
     
+    var radio_1  = $("input[name='radio_1']:checked").val(),
+        select_1 = $(".select option:selected").val();
+    
+    org.running.logic(radio_1, select_1);
+    org.running.update_view($, $("#mytotal"));
+    
     // Update if the radio button is changed
     $("input[name='radio_1']").live('change', function(){
         var radio_1  = $(this).val(),
